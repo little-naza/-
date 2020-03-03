@@ -17,6 +17,9 @@ public class Student {// 数据传输对象
 
 	}
 
+
+	
+	
 	public Student(String name, String num, int age, String sex, String nativeplace, String department, String phone,
 			String chang, String graduate) {
 		this.name = name;

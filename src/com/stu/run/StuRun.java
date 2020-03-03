@@ -7,19 +7,21 @@ import com.stu.dto.Student;
 import com.stu.impl.StuImpl;
 
 public class StuRun {// 主方法
+	private static Scanner sc = new Scanner(System.in);
+
 	public static void main(String[] args) throws InterruptedException {
 		// 程序运行入口
 		DateBase Data = new DateBase();
 		Data.init();
 		mainmanu();
 		// clear1();
+		
 
 	}
 
 	public static void mainmanu() throws InterruptedException {// 操作提示
 		boolean flag = true;
 		while (flag) {
-			Scanner sc = new Scanner(System.in);
 			int a = sc.nextInt();
 			show1();
 			switch (a) {
@@ -36,7 +38,7 @@ public class StuRun {// 主方法
 				break;
 			}
 			System.out.println("输入有误，请重新输入！");
-		}
+		};
 
 	}
 
@@ -44,7 +46,7 @@ public class StuRun {// 主方法
 		Scanner in = new Scanner(System.in);
 		boolean choose = true;
 
-		a:while (choose) {
+		a: while (choose) {
 			System.out.println("------------------------------------------------------------------");
 			System.out.print("请输入姓名：");
 			String name = in.nextLine();
@@ -90,19 +92,20 @@ public class StuRun {// 主方法
 					+ "    是否毕业：" + graduate);
 			System.out.println("----------------------------------------------------------------------------");
 			System.out.println("\t请检查信息是否有误    | 重新修改请按  1  |退出请按  2|");
-			while(true) {
+			while (true) {
 				String sc = in.nextLine();
 				if (sc.equals("1")) {
-				continue;
-			}
-			if (sc.equals("2")) {
-				// 接下来是传输值
-				Student student = new Student(name, num, age, sex, nativeplace, department, phone, change, graduate);
-				StuImpl impl = new StuImpl();
-				impl.addStu(student);
-				break a;
-			}
-			System.out.println("...输入有误请重新输入...");
+					continue;
+				}
+				if (sc.equals("2")) {
+					// 接下来是传输值
+					Student student = new Student(name, num, age, sex, nativeplace, department, phone, change,
+							graduate);
+					StuImpl impl = new StuImpl();
+					impl.addStu(student);
+					break a;
+				}
+				System.out.println("...输入有误请重新输入...");
 			}
 		}
 	}
@@ -128,13 +131,13 @@ public class StuRun {// 主方法
 	}
 
 	public static void sortByNum() {// 按学号对学生信息进行从小到大排序
-		DateBase date=new DateBase();
-		for (int i = 1; i <=100; i++) {
-			if(date.num[0].compareTo(date.num[i])>0) {
+		DateBase date = new DateBase();
+		for (int i = 1; i <= 100; i++) {
+			if (date.num[0].compareTo(date.num[i]) > 0) {
 				System.out.println();
 			}
 		}
-		
+
 	}
 
 //----------------------------------------------
