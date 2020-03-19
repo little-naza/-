@@ -1,31 +1,27 @@
 package com.stu.dto;
 
-import com.stu.db.DateBase;
-
 public class Student {// 数据传输对象
 	private String name;// 姓名
 	private String num;// 学号
 	private int age;// 年龄
-	private String sex;// 性别
+	private String gender;// 性别
 	private String nativeplace;// 籍贯
 	private String department;// 所在系部
 	private String phone;// 联系电话
 	private String chang;// 学籍变动情况
 	private String graduate;// 是否毕业
 
-	public Student() {
+	public Student() {  //无参构造
 
 	}
 
-
-	
-	
-	public Student(String name, String num, int age, String sex, String nativeplace, String department, String phone,
-			String chang, String graduate) {
+	public Student(String name, String num, 
+			int age, String gender, String nativeplace, String department, String phone,
+			String chang, String graduate) {  //有参构造
 		this.name = name;
 		this.num = num;
 		this.age = age;
-		this.sex = sex;
+		this.gender = gender;
 		this.nativeplace = nativeplace;
 		this.department = department;
 		this.phone = phone;
@@ -33,19 +29,16 @@ public class Student {// 数据传输对象
 		this.graduate = graduate;
 	}
 
-	public void getStu() {
-		DateBase date = new DateBase();
-		date.name[0] = this.name;
-		date.num[0] = this.num;
-		date.age[0] = this.age;
-		date.sex[0] = this.sex;
-		date.nativeplace[0] = this.nativeplace;
-		date.department[0] = this.department;
-		date.phone[0] = this.phone;
-		date.chang[0] = this.chang;
-		date.graduate[0] = this.graduate;
+	public String toString() {
+		System.out.println();
+		String s="&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&\n";
+		s+="  姓名："+this.name+"\t学号："+this.num+"\t年龄："+this.age+"\n  性别："+this.gender;
+		s+="\t籍贯："+this.nativeplace+"\t所在系部："+this.department;
+		s+="\n  电话号码："+this.phone+"学籍变动情况："+this.chang+"是否毕业："+this.graduate;
+		s+="\n&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&";
+		System.out.println();
+		return s;
 	}
-
 	public String getName() {
 		return name;
 	}
@@ -70,12 +63,12 @@ public class Student {// 数据传输对象
 		this.age = age;
 	}
 
-	public String getSex() {
-		return sex;
+	public String getGender() {
+		return gender;
 	}
 
-	public void setSex(String sex) {
-		this.sex = sex;
+	public void setGender(String sex) {
+		this.gender = sex;
 	}
 
 	public String getNativeplace() {
@@ -117,5 +110,7 @@ public class Student {// 数据传输对象
 	public void setGraduate(String graduate) {
 		this.graduate = graduate;
 	}
+
+	
 
 }
